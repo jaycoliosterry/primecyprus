@@ -1,38 +1,172 @@
-<%= simple_form_for(@property) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :property_type %>
-    <%= f.input :property_sale_or_rental %>
-    <%= f.input :property_price_per_month %>
-    <%= f.input :property_price_for_sale %>
-    <%= f.input :property_rental_deposit %>
-    <%= f.input :property_first_line_address %>
-    <%= f.input :property_postcode %>
-    <%= f.input :property_region %>
-    <%= f.input :property_listing_type %>
-    <%= f.input :property_number_of_bedrooms %>
-    <%= f.input :property_number_of_bathrooms %>
-    <%= f.input :property_size_in_metres %>
-    <%= f.input :property_condition %>
-    <%= f.input :property_near_banks %>
-    <%= f.input :property_is_new_build %>
-    <%= f.input :property_has_elevator %>
-    <%= f.input :property_has_garage %>
-    <%= f.input :property_has_private_pool %>
-    <%= f.input :property_has_communal_pool %>
-    <%= f.input :property_has_terrace %>
-    <%= f.input :property_has_photos %>
-    <%= f.input :property_has_airconditioning %>
-    <%= f.input :property_has_garden %>
-    <%= f.input :property_has_storage %>
-    <%= f.input :property_has_wardrobes %>
-    <%= f.input :property_floor %>
-    <%= f.association :user %>
-    <%= f.input :property_photos %>
+<%= form_for @property, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :property_type, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_type, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_sale_or_rental, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_sale_or_rental, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_price_per_month, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_price_per_month, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_price_for_sale, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_price_for_sale, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_rental_deposit, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_rental_deposit, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_first_line_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_first_line_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_postcode, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_postcode, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_region, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_region, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_listing_type, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_listing_type, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_number_of_bedrooms, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :property_number_of_bedrooms, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_number_of_bathrooms, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :property_number_of_bathrooms, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_size_in_metres, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_size_in_metres, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_condition, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_condition, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_near_banks, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_near_banks, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_is_new_build, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_is_new_build, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_elevator, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_elevator, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_garage, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_garage, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_private_pool, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_private_pool, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_communal_pool, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_communal_pool, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_terrace, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_terrace, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_photos, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_photos, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_airconditioning, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_airconditioning, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_garden, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_garden, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_storage, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_storage, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_has_wardrobes, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :property_has_wardrobes, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_floor, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_floor, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_photos, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :property_photos, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  properties_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

@@ -1,43 +1,46 @@
-<h1>Listing properties</h1>
-
-<table>
+<%- model_class = Property -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Property %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Property type</th>
-      <th>Property sale or rental</th>
-      <th>Property price per month</th>
-      <th>Property price for sale</th>
-      <th>Property rental deposit</th>
-      <th>Property first line address</th>
-      <th>Property postcode</th>
-      <th>Property region</th>
-      <th>Property listing type</th>
-      <th>Property number of bedrooms</th>
-      <th>Property number of bathrooms</th>
-      <th>Property size in metres</th>
-      <th>Property condition</th>
-      <th>Property near banks</th>
-      <th>Property is new build</th>
-      <th>Property has elevator</th>
-      <th>Property has garage</th>
-      <th>Property has private pool</th>
-      <th>Property has communal pool</th>
-      <th>Property has terrace</th>
-      <th>Property has photos</th>
-      <th>Property has airconditioning</th>
-      <th>Property has garden</th>
-      <th>Property has storage</th>
-      <th>Property has wardrobes</th>
-      <th>Property floor</th>
-      <th>User</th>
-      <th>Property photos</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:property_type) %></th>
+      <th><%= model_class.human_attribute_name(:property_sale_or_rental) %></th>
+      <th><%= model_class.human_attribute_name(:property_price_per_month) %></th>
+      <th><%= model_class.human_attribute_name(:property_price_for_sale) %></th>
+      <th><%= model_class.human_attribute_name(:property_rental_deposit) %></th>
+      <th><%= model_class.human_attribute_name(:property_first_line_address) %></th>
+      <th><%= model_class.human_attribute_name(:property_postcode) %></th>
+      <th><%= model_class.human_attribute_name(:property_region) %></th>
+      <th><%= model_class.human_attribute_name(:property_listing_type) %></th>
+      <th><%= model_class.human_attribute_name(:property_number_of_bedrooms) %></th>
+      <th><%= model_class.human_attribute_name(:property_number_of_bathrooms) %></th>
+      <th><%= model_class.human_attribute_name(:property_size_in_metres) %></th>
+      <th><%= model_class.human_attribute_name(:property_condition) %></th>
+      <th><%= model_class.human_attribute_name(:property_near_banks) %></th>
+      <th><%= model_class.human_attribute_name(:property_is_new_build) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_elevator) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_garage) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_private_pool) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_communal_pool) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_terrace) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_photos) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_airconditioning) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_garden) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_storage) %></th>
+      <th><%= model_class.human_attribute_name(:property_has_wardrobes) %></th>
+      <th><%= model_class.human_attribute_name(:property_floor) %></th>
+      <th><%= model_class.human_attribute_name(:property_photos) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @properties.each do |property| %>
       <tr>
+        <td><%= property.id %></td>
         <td><%= property.property_type %></td>
         <td><%= property.property_sale_or_rental %></td>
         <td><%= property.property_price_per_month %></td>
@@ -64,16 +67,22 @@
         <td><%= property.property_has_storage %></td>
         <td><%= property.property_has_wardrobes %></td>
         <td><%= property.property_floor %></td>
-        <td><%= property.user %></td>
         <td><%= property.property_photos %></td>
-        <td><%= link_to 'Show', property %></td>
-        <td><%= link_to 'Edit', edit_property_path(property) %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l property.created_at, format: :long %></td>
+        <td>
+          <%= link_to property_path(property), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to property_path(property), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Property', new_property_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_property_path,
+            :class => 'btn btn-primary' %>
