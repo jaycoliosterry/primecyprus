@@ -1,0 +1,38 @@
+<%= simple_form_for(@property) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :property_type %>
+    <%= f.input :property_sale_or_rental %>
+    <%= f.input :property_price_per_month %>
+    <%= f.input :property_price_for_sale %>
+    <%= f.input :property_rental_deposit %>
+    <%= f.input :property_first_line_address %>
+    <%= f.input :property_postcode %>
+    <%= f.input :property_region %>
+    <%= f.input :property_listing_type %>
+    <%= f.input :property_number_of_bedrooms %>
+    <%= f.input :property_number_of_bathrooms %>
+    <%= f.input :property_size_in_metres %>
+    <%= f.input :property_condition %>
+    <%= f.input :property_near_banks %>
+    <%= f.input :property_is_new_build %>
+    <%= f.input :property_has_elevator %>
+    <%= f.input :property_has_garage %>
+    <%= f.input :property_has_private_pool %>
+    <%= f.input :property_has_communal_pool %>
+    <%= f.input :property_has_terrace %>
+    <%= f.input :property_has_photos %>
+    <%= f.input :property_has_airconditioning %>
+    <%= f.input :property_has_garden %>
+    <%= f.input :property_has_storage %>
+    <%= f.input :property_has_wardrobes %>
+    <%= f.input :property_floor %>
+    <%= f.association :user %>
+    <%= f.input :property_photos %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

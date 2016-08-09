@@ -1,0 +1,79 @@
+<h1>Listing properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property type</th>
+      <th>Property sale or rental</th>
+      <th>Property price per month</th>
+      <th>Property price for sale</th>
+      <th>Property rental deposit</th>
+      <th>Property first line address</th>
+      <th>Property postcode</th>
+      <th>Property region</th>
+      <th>Property listing type</th>
+      <th>Property number of bedrooms</th>
+      <th>Property number of bathrooms</th>
+      <th>Property size in metres</th>
+      <th>Property condition</th>
+      <th>Property near banks</th>
+      <th>Property is new build</th>
+      <th>Property has elevator</th>
+      <th>Property has garage</th>
+      <th>Property has private pool</th>
+      <th>Property has communal pool</th>
+      <th>Property has terrace</th>
+      <th>Property has photos</th>
+      <th>Property has airconditioning</th>
+      <th>Property has garden</th>
+      <th>Property has storage</th>
+      <th>Property has wardrobes</th>
+      <th>Property floor</th>
+      <th>User</th>
+      <th>Property photos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.property_type %></td>
+        <td><%= property.property_sale_or_rental %></td>
+        <td><%= property.property_price_per_month %></td>
+        <td><%= property.property_price_for_sale %></td>
+        <td><%= property.property_rental_deposit %></td>
+        <td><%= property.property_first_line_address %></td>
+        <td><%= property.property_postcode %></td>
+        <td><%= property.property_region %></td>
+        <td><%= property.property_listing_type %></td>
+        <td><%= property.property_number_of_bedrooms %></td>
+        <td><%= property.property_number_of_bathrooms %></td>
+        <td><%= property.property_size_in_metres %></td>
+        <td><%= property.property_condition %></td>
+        <td><%= property.property_near_banks %></td>
+        <td><%= property.property_is_new_build %></td>
+        <td><%= property.property_has_elevator %></td>
+        <td><%= property.property_has_garage %></td>
+        <td><%= property.property_has_private_pool %></td>
+        <td><%= property.property_has_communal_pool %></td>
+        <td><%= property.property_has_terrace %></td>
+        <td><%= property.property_has_photos %></td>
+        <td><%= property.property_has_airconditioning %></td>
+        <td><%= property.property_has_garden %></td>
+        <td><%= property.property_has_storage %></td>
+        <td><%= property.property_has_wardrobes %></td>
+        <td><%= property.property_floor %></td>
+        <td><%= property.user %></td>
+        <td><%= property.property_photos %></td>
+        <td><%= link_to 'Show', property %></td>
+        <td><%= link_to 'Edit', edit_property_path(property) %></td>
+        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property', new_property_path %>
